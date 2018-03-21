@@ -43,7 +43,9 @@ class Carousel extends DataExtension
             $config->removeComponentsByType('GridFieldAddExistingAutocompleter');
             $config->removeComponentsByType('GridFieldDeleteAction');
             $config->addComponent(new GridFieldDeleteAction(false));
-            $fields->addFieldToTab('Root.Slides', GridField::create(
+            $slideTitle = $this->owner->stat('slide_tab_title') ?: _t(__CLASS__ . '.SLIDES', 'Slides');
+
+            $fields->addFieldToTab("Root.{$slideTitle}", GridField::create(
                 'Slides',
                 _t(__CLASS__ . '.SLIDES', 'Slides'),
                 $this->owner->Slides()->sort('SortOrder'),
