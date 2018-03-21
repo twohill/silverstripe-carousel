@@ -1,0 +1,17 @@
+en:
+  Twohill\Carousel\Model\SlideImage:
+    NAME: 'Name'
+    TITLE: 'Title'
+    TEXT: 'Text'
+    IMAGE: 'Image'
+    LINK: 'Optional link:'
+    USED_IN_TEMPLATE: 'optional, used in template'
+    SINGULARNAME: 'Slide Image'
+    PLURALNAME: 'Slide Images'
+    PLURALS:
+      one: 'A Slide Image'
+      other: '{count} Slide Images'
+
+  Twohill\Carousel\Extensions\Carousel:
+    SLIDES: 'Slides'
+    LEARN_MORE: 'Learn more'

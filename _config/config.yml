@@ -1,0 +1,6 @@
+---
+Name: Carousel
+---
+Twohill\Carousel\Model\SlideImage:
+  extensions:
+    - SilverStripe\Versioned\Versioned('Stage','Live')
