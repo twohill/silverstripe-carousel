@@ -8,6 +8,7 @@ use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
 use Sheadawson\Linkable\Models\Link;
+
 /**
  * Class SlideImage
  * @package Twohill\Carousel\Model
@@ -77,7 +78,7 @@ class SlideImage extends DataObject implements PermissionProvider
      */
     private static $summary_fields = [
         'Image.CMSThumbnail' => 'Image',
-        'Name' => 'Name',
+        'Text' => 'Text',
     ];
 
     /**
@@ -139,7 +140,7 @@ class SlideImage extends DataObject implements PermissionProvider
 
         $image->getValidator()->setAllowedExtensions(['jpg', 'jpeg', 'png', 'gif']);
 
-        $fields->insertAfter($image, 'Description');
+        $fields->insertAfter($image, 'Text');
 
         $this->extend('updateSlideImageFields', $fields);
 
