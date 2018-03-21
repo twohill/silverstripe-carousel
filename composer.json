@@ -19,7 +19,7 @@
   "require": {
     "sheadawson/silverstripe-linkable": "dev-master",
     "silverstripe/asset-admin": "^1.1",
-    "silverstripe/recipe-cms": "^1.1",
+    "silverstripe/recipe-cms": "^1",
     "symbiote/silverstripe-gridfieldextensions": "3.0"
   }
 }
