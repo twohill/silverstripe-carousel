@@ -14,6 +14,16 @@ Install via Composer
 composer require twohill/silverstripe-carousel
 ```
 
+Update your `mysite/_config/mysite.yml`
+
+```yml
+Page:
+  extensions:
+    - Twohill\Carousel\Extensions\Carousel
+```
+
+Run `dev/build`
+
 ## License
 3-clause BSD. See [License](license.md)
 
