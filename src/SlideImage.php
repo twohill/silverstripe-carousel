@@ -75,18 +75,18 @@ class SlideImage extends DataObject implements PermissionProvider
     /**
      * @var array
      */
-    private static $summary_fields = array(
+    private static $summary_fields = [
         'Image.CMSThumbnail' => 'Image',
         'Name' => 'Name',
-    );
+    ];
 
     /**
      * @var array
      */
-    private static $searchable_fields = array(
+    private static $searchable_fields = [
         'Title',
         'Text',
-    );
+    ];
 
     /**
      * @var int
