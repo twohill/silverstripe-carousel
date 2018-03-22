@@ -2,6 +2,7 @@
 
 namespace Twohill\Carousel\Model;
 
+use Sheadawson\Linkable\Forms\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
@@ -68,9 +69,9 @@ class SlideImage extends DataObject implements PermissionProvider
 
     /**
      * Adds Publish button to SlideImage record
-    *
-    * @var bool
-    */
+     *
+     * @var bool
+     */
     private static $versioned_gridfield_extensions = true;
 
     /**
@@ -106,6 +107,7 @@ class SlideImage extends DataObject implements PermissionProvider
             'SortOrder',
             'PageID',
             'Image',
+            'LinkId'
         ]);
 
         // Title
@@ -126,11 +128,6 @@ class SlideImage extends DataObject implements PermissionProvider
                 _t(__CLASS__ . '.USED_IN_TEMPLATE', 'optional, used in template')
             );
 
-        // Page link
-        $fields->dataFieldByName('LinkID')
-            ->setTitle(
-                _t(__CLASS__ . '.PAGE_LINK', "Optional link")
-            );
 
         // Image
         $image = UploadField::create(
@@ -140,7 +137,11 @@ class SlideImage extends DataObject implements PermissionProvider
 
         $image->getValidator()->setAllowedExtensions(['jpg', 'jpeg', 'png', 'gif']);
 
-        $fields->insertAfter($image, 'Text');
+        $fields->insertBefore($image, 'Title');
+        $fields->insertAfter(
+            'Text',
+            LinkField::create('LinkID', _t(__CLASS__ . '.PAGE_LINK', "Optional link"))
+        );
 
         $this->extend('updateSlideImageFields', $fields);
 
