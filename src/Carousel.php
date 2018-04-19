@@ -61,8 +61,6 @@ class Carousel extends DataExtension
      */
     public function getSlideShow()
     {
-        $owner = $this->owner;
-
-        return $this->owner->Slides()->sort('SortOrder');
+        return $this->owner->Slides()->filter('')->sort('SortOrder');
     }
 }
