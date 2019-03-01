@@ -27,6 +27,10 @@ class Carousel extends DataExtension
     private static $has_many = [
         'Slides' => SlideImage::class,
     ];
+    
+    private static $owns = [
+        'Slides',
+        ];
 
 
     /**
