@@ -36,7 +36,12 @@ jQuery this module does *not* make any assumptions as to what version you are us
 Suggested code to be included in `Page.ss`
 
 ```html
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<!-- In your template -->
+<% include Carousel %>
+
+
+<!-- In the header or end of body - jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
